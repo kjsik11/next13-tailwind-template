@@ -1,5 +1,5 @@
 {
-  "name": "next13-template",
+  "name": "next13-tailwind-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,14 +10,20 @@
   },
   "dependencies": {
     "@next/font": "13.1.4",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "eslint": "8.32.0",
-    "eslint-config-next": "13.1.4",
     "next": "13.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "eslint": "8.32.0",
+    "prettier": "2.8.1",
+    "eslint-config-next": "13.1.4",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-unused-imports": "2.0.0"
   }
 }
