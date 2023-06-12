@@ -1,11 +1,17 @@
 import '@/styles/global.css';
 
 import { Inter } from '@next/font/google';
+import { Metadata } from 'next';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
 });
+
+export const metadata: Metadata = {
+  title: 'Nextjs.13',
+  description: 'Next.js13 Template',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
