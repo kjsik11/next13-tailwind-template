@@ -6,6 +6,9 @@ declare global {
     className?: string;
   };
   type ComponentDefaultPropsWithChildren = PropsWithChildren<ComponentDefaultProps>;
+  type OurNextApiRequest = NextApiRequest & {
+    pg: Client;
+  };
 }
 
 export {};

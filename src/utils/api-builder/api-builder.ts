@@ -1,9 +1,9 @@
 import { errorHandler } from './error-handler';
 
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiResponse } from 'next';
 
 export type OurHandler = (
-  req: NextApiRequest,
+  req: OurNextApiRequest,
   res: NextApiResponse,
 ) => Promise<void | NextApiResponse<any>>;
 export type ApiWrapper = (handler: OurHandler) => OurHandler;
