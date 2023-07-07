@@ -1,6 +1,6 @@
 import { Client } from 'pg';
 
-import { PGSQL_DATABASE, PGSQL_HOST, PGSQL_PASSWORD, PGSQL_PORT, PGSQL_USER } from '../env';
+import { PGSQL_DATABASE, PGSQL_HOST, PGSQL_PASSWORD, PGSQL_PORT, PGSQL_USER, isProd } from '../env';
 import { ERRORS } from '../error';
 
 export default async function getConnection() {
@@ -15,6 +15,8 @@ export default async function getConnection() {
     database: PGSQL_DATABASE,
   });
 
+  if (!isProd) console.log('Connecting to database');
   await client.connect();
+
   return client;
 }
