@@ -2,6 +2,7 @@ import { StatusCodes } from 'http-status-codes';
 import { isResSent } from 'next/dist/shared/lib/utils';
 import { ZodError } from 'zod';
 
+import { isProd } from '../env';
 import { ApiError, ERRORS } from '../error';
 
 import { ApiWrapper, OurHandler } from './api-builder';
@@ -14,6 +15,8 @@ export const errorHandler: ApiWrapper = (handler: OurHandler) => async (req, res
       throw new ApiError(ERRORS['METHOD_NOT_ALLOWED']);
     }
   } catch (err) {
+    if (!isProd) console.error('ERROR: ', err);
+
     if (isResSent(res)) {
       // TODO: should we need to take care of broken handler
       //       after sending a response back to client? 🤔
